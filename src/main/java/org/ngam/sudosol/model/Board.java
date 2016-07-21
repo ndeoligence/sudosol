@@ -3,11 +3,11 @@ package org.ngam.sudosol.model;
 /**
  * Created by phoenix on 7/20/16.
  */
-public class Table {
+public class Board {
     private int[][] array;
     private int rows;
     private int cols;
-    public Table(int rows, int cols) {
+    public Board(int rows, int cols) {
         this.rows = rows;
         this.cols = cols;
         array = new int[rows][cols];
@@ -29,4 +29,6 @@ public class Table {
     private boolean exists(int row, int col) {
         return (row >= 0 && row <= rows) && (col >= 0 && col <= cols);
     }
+    public int getRows() {return rows;}
+    public int getCols() {return cols;}
 }
