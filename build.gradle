@@ -1,3 +1,13 @@
 apply plugin: 'java'
 apply plugin: 'application'
 mainClassName = 'org.ngam.sudosol.controller.MainClass'
+
+task GPL(description: 'Sets project to GPL 3.0 license') << {
+	licenseFile = new File('LICENCE.txt')
+	u = 'http://www.gnu.org/licenses/gpl-3.0.txt'
+
+	println 'Retrieving GNU license text'
+	def url = new URL(u)
+	println 'Saving to LICENCE.txt'
+	licenseFile.setText(url.getText())
+}
